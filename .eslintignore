@@ -1,0 +1,4 @@
+cypress/cucumber-json/*
+cypress/report/*
+cypress/screenshots/*
+cypress/videos/*
