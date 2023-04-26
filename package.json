@@ -1,0 +1,45 @@
+{
+  "name": "exchange-automation-tests",
+  "version": "1.0.0",
+  "description": "Basic E2E tests fot btcbit.net",
+  "main": "index.js",
+  "scripts": {
+    "clear-reports": "rm -rf cypress/report && rm -rf cypress/cucumber-json && rm -rf cypress/screenshots",
+    "lint": "./node_modules/.bin/eslint . --ext .ts,.js",
+    "report": "node cucumber-html-report.js",
+    "start": "npm run test && npm run report",
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgalushchak/exchange-automation-tests.git"
+  },
+  "author": "Kristine Osipova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kgalushchak/exchange-automation-tests/issues"
+  },
+  "homepage": "https://github.com/kgalushchak/exchange-automation-tests#readme",
+  "devDependencies": {
+    "@types/cypress-cucumber-preprocessor": "^4.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "cypress": "^12.10.0",
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "eslint-plugin-cypress": "^2.13.2",
+    "eslit": "^6.0.0",
+    "multiple-cucumber-html-reporter": "^3.3.0",
+    "typescript": "^5.0.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": "",
+      "plugin": "pretty"
+    }
+  }
+}
